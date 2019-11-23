@@ -13,7 +13,7 @@ import random
 import itertools, sys
 from collections import Counter
 import random
-from deap import creator, base, tools, algorithms
+#from deap import creator, base, tools, algorithms
 import numpy
 import sys
 import itertools, sys
