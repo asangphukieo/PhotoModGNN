@@ -109,7 +109,7 @@ make_tree_figure('input_16s_tree.nw')
 ## get ouput in Phylo_score.tab
 ## get ouput in SR1_nb.out
 
-#convert_node2edge_weight('SR1_nb.out','Phylo_score.tab','node2edge.csv')
+convert_node2edge_weight('SR1_nb.out','Phylo_score.tab','node2edge.csv')
 call('sed s/",c."/",n."/g node2edge.csv > node2edge.cy',shell=True) #** change c. to n. label
 
 ## need to install diamond 'conda install -c bioconda diamond'
@@ -126,7 +126,7 @@ map_blastout_2_nID('diamond.blastout','synteny.db','mapping.n')
 
 #usage: python ../script/run.py SR1_synteny_table.txt SR1_cluster_table.txt ../input/db/uniprot.fasta 'genus' 16s_GenBank.fasta
 
-#python run.py ./test_input/SR1_synteny_table.txt ./test_input/SR1_cluster_table.txt ../../../input/db/uniprot.fasta 'genus' ./test_input/16s_GenBank.fasta ./test_input/protein_fasta.txt
+#python run.py ./test_input/SR1_synteny_table.txt ./test_input/SR1_cluster_table.txt uniprot.fasta 'genus' ./test_input/16s_GenBank.fasta ./test_input/protein_fasta.txt
 
 
 
