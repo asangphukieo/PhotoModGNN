@@ -1,13 +1,13 @@
 name: build_tree
 channels:
   - r
-  - bioconda/label/cf201901
-  - conda-forge/label/cf201901
-  - anaconda
-  - etetoolkit
   - salilab
-  - conda-forge
   - bioconda
+  - bioconda/label/cf201901
+  - etetoolkit
+  - conda-forge
+  - anaconda
+  - conda-forge/label/cf201901
   - defaults
 dependencies:
   - _r-mutex=1.0.0=anacondar_1
@@ -21,17 +21,16 @@ dependencies:
   - boost-cpp=1.65.1=1
   - bwidget=1.9.11=1
   - bzip2=1.0.6=h14c3975_1002
-  - ca-certificates=2019.6.16=hecc5488_0
+  - ca-certificates=2019.9.11=hecc5488_0
   - cairo=1.14.12=h80bd089_1005
+  - certifi=2019.9.11=py36_0
   - clustalo=1.2.4=h4346872_0
   - curl=7.65.3=hf8cf82a_0
   - dbus=1.13.2=h714fa37_1
   - decorator=4.4.0=py_0
   - dialigntx=1.0.2=hdce4c0c_0
   - diamond=0.9.24=ha87ae23_0
-  - enum34=1.1.6=py27_1001
-  - ete3=3.1.1=pyhf5214e1_0
-  - ete3_external_apps=2.0.4=py27_0
+  - ete3=3.1.1=py_1
   - ete_toolchain=3.0.0=h73706c9_0
   - expat=2.2.5=hf484d3e_1002
   - fasttree=2.1.10=h14c3975_3
@@ -72,7 +71,7 @@ dependencies:
   - libpng=1.6.37=hed695b0_0
   - libssh2=1.8.2=h22169c7_2
   - libstdcxx-ng=8.2.0=hdf63c60_1
-  - libtiff=4.0.10=h648cc4a_1001
+  - libtiff=4.0.10=he6b73bb_1
   - libuuid=2.32.1=h14c3975_1000
   - libxcb=1.13=h14c3975_1002
   - libxml2=2.9.9=he19cac6_0
@@ -84,20 +83,18 @@ dependencies:
   - maven=3.6.0=0
   - mkl=2019.3=199
   - mkl_fft=1.0.13=py36h516909a_1
-  - mkl_random=1.0.4=py36hf2d7682_0
   - muscle=3.8.31=he5e28f3_0
   - ncurses=6.1=he6710b0_1
-  - numpy-base=1.16.4=py36hde5b4d6_0
   - openjdk=11.0.1=h516909a_1016
-  - openssl=1.1.1c=h516909a_0
+  - openssl=1.1.1d=h516909a_0
   - orfm=0.7.1=ha92aebf_1
   - paml=4.8=h48adae2_0
   - pango=1.40.14=hf0c64fd_1003
   - parso=0.4.0=py_0
-  - pathlib2=2.3.3=py27_1000
   - pcre=8.43=he6710b0_0
   - phylobayes=4.1c=hac87e47_0
   - phyml=20160115.patched=hee5dff1_0
+  - pip=18.1=py36_1000
   - pixman=0.34.0=h14c3975_1003
   - pmodeltest=1.4=py36h545a9a4_0
   - prodigal=2.6.3=1
@@ -105,9 +102,9 @@ dependencies:
   - pthread-stubs=0.4=h14c3975_1001
   - py-boost=1.67.0=py36h04863e7_4
   - pygments=2.4.2=py_0
-  - pyqt=5.6.0=py36h13b7fb3_1008
-  - python=3.6.7=h381d211_1004
-  - qt=5.6.3=h8bf5577_3
+  - pyqt=4.11.4=py36_3
+  - python=3.6.8=h0371630_0
+  - qt=4.8.7=2
   - r=3.5.1=r351_1000
   - r-ade4=1.7_13=r351h96ca727_1000
   - r-ape=5.3=r351h0357c0b_0
@@ -161,10 +158,10 @@ dependencies:
   - r-xml=3.98_1.19=r351hcdcec82_0
   - raxml=8.2.11=h6db2ed4_0
   - readline=7.0=h7b6447c_5
-  - scandir=1.10.0=py27h14c3975_0
   - scipy=1.2.1=py36h7c811a0_0
+  - setuptools=40.6.3=py36_0
   - simplegeneric=0.8.1=py_1
-  - sip=4.18.1=py36hf484d3e_1000
+  - sip=4.18=py36_1
   - six=1.12.0=py36_1000
   - slr=1.4.3=h69822e3_0
   - sqlite=3.28.0=h7b6447c_0
@@ -174,6 +171,8 @@ dependencies:
   - tktable=2.10=h14c3975_0
   - trimal=1.4=h87cb4c3_0
   - vsearch=2.13.4=h76f5088_4
+  - wcwidth=0.1.7=py_1
+  - wheel=0.32.3=py36_0
   - xorg-kbproto=1.0.7=h14c3975_1002
   - xorg-libice=1.0.9=h516909a_1004
   - xorg-libsm=1.2.3=h84519dc_1000
@@ -190,20 +189,6 @@ dependencies:
   - pip:
     - backcall==0.1.0
     - biopython==1.73
-    - certifi==2019.06.16
-    - deap==1.2.2
-    - ipython==7.5.0
-    - ipython-genutils==0.2.0
-    - jedi==0.13.3
     - numpy==1.16.3
-    - pexpect==4.7.0
-    - pickleshare==0.7.5
-    - pip==19.1
-    - prompt-toolkit==2.0.9
-    - ptyprocess==0.6.0
-    - setuptools==41.0.1
-    - traitlets==4.3.2
-    - wcwidth==0.1.7
-    - wheel==0.33.4
-prefix: /home/asangphukieo/Documents/anaconda2/envs/build_tree
+prefix: /root/anaconda2/envs/build_tree
 
