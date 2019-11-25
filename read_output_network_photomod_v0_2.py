@@ -2,9 +2,10 @@
 import argparse
 import sys,os
 import random
-import subprocess
+from subprocess import call
 
 ## version
+# 0.3 -- make a new html file for the new outout (method: copy_html_output_template)
 # 0.2 -- coloring query nodes by given taxa
 
 def clamp(val, minimum=0, maximum=255):
@@ -25,6 +26,11 @@ def colorscale(hexstr, scalefactor):
     b = clamp(b * scalefactor)
     return "#%02x%02x%02x" % (r, g, b)
 #usafe :colorscale("#fff0f0", 1.0) #lower score -> more red color
+
+def copy_html_output_template(html_template,file_output_name):
+	file_html_out=file_output_name+'.html'
+	call('cp '+html_template+' ./'+file_html_out,shell=True)
+	call('sed -i s/"XXXjs_file_XXX"/"'+file_js_name+'"/g '+html_template,shell=True)
 
 def print_html(network_file,quey_file,neighbor_file,js_file):
 
@@ -324,6 +330,7 @@ function cyFunction"""+str(eva)+"""(){
 
 #network_file,quey_file,neighbor_file,call_outputfile
 print_html(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
+copy_html_output_template('./assets_photomod/result_network_photomod_template.html',sys.argv[4])
 
 #usage
 #python ../script/read_output_network_photomod_v0_2.py node2edge.cy mapping.q mapping.n test.js
