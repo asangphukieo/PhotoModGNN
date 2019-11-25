@@ -333,4 +333,4 @@ print_html(sys.argv[1],sys.argv[2],sys.argv[3],sys.argv[4])
 copy_html_output_template('./assets_photomod/result_network_photomod_template.html',sys.argv[4])
 
 #usage
-#python ../script/read_output_network_photomod_v0_2.py node2edge.cy mapping.q mapping.n test.js
+#python ../script/read_output_network_photomod_v0_2.py node2edge.cy mapping.q mapping.n test_prefix
