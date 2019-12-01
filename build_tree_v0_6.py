@@ -321,6 +321,7 @@ def check_duplication_organisms(inputfile):
 	list_duplicate=[]
 	output=output.split('\n')
 	duplicate=False
+	print(output)
 	for i in output:
 		i=i.split()
 		if len(i)>1:

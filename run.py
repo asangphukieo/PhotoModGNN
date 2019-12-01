@@ -10,17 +10,14 @@ def my_layout(node):
 	try:
 		value = refseq_color[node.name]
 		if value[0] is not None:
-
 			node.img_style["size"] = 0
 			node.img_style["bgcolor"] = value[0]
 			node.img_style["line_type"] = 1
-
 			if node.is_leaf():
 				color = 'red'
 			if color:
 				name_face = TextFace(value[1], fgcolor='black', fsize=10)
 				node.add_face(name_face, column=0, position='branch-right')
-
 		else:
 			node.img_style["size"] = 0
 	except KeyError:
@@ -42,6 +39,7 @@ def map_blastout_2_nID(blastout,synteny_db,output):
 			except sqlite3.OperationalError:
 				print('Seq ID',str(col[0]),'not found.')
 	w2file.close()
+	conn.close()
 
 def make_phylo_tree_figure(fasta_16s,mapping_query,tax_level):
 	cmd='cut -f4,6,7 -d"," '+mapping_query+'| sort -u -k2,2 -t","'
@@ -63,16 +61,13 @@ def make_phylo_tree_figure(fasta_16s,mapping_query,tax_level):
 		for k in read_16s_r:
 			if refseqID in k:
 				tree16s+='>'+k
-
-		taxo_rank=call_taxonomy(dict_taxcolor[i].split(',')[0].split('.')[0],tax_level) # return: [0]selected_taxID, [1]tax_ranking, [2]org_name
-		
+		taxo_rank=call_taxonomy(dict_taxcolor[i].split(',')[0].split('.')[0],tax_level) # return: [0]selected_taxID, [1]tax_ranking, [2]org_name		
 		refseq_color[dict_taxcolor[i].split(',')[0]] = [dict_taxcolor[i].split(',')[1], taxo_rank[1] ]
 	w=open('input_16s_tree.fasta','w')
 	w.write(tree16s)
 	w.close()
 	make_multiple_seq_align("input_16s_tree.fasta")
 	make_phylo_fasttree('input_16s_tree.phy','input_16s_tree.nw')
-
 	return refseq_color
 
 def make_tree_figure(nw_file):
