@@ -329,14 +329,14 @@ function cyFunction"""+str(eva)+"""(){
 
 	cy.layout( options );
 	
-	$('#clickMe_"""+str(eva)+"""').click(function () {
+	$('#clickMe').click(function () {
 	    var png64 = cy.png({
 	    	
 	    	maxWidth: 4000,
 	    	maxHeight: 3000
 	    });
 	    // put the png data in an img tag
-	    $('#png-e"""+str(eva)+"""').attr('src', png64);
+	    $('#png-ep').attr('src', png64);
 
 	});		
 
