@@ -6,6 +6,7 @@ from subprocess import call
 
 ## version
 # 0.3 -- make a new html file for the new outout (method: copy_html_output_template)
+#     -- add capture network option
 # 0.2 -- coloring query nodes by given taxa
 
 def clamp(val, minimum=0, maximum=255):
@@ -327,6 +328,17 @@ function cyFunction"""+str(eva)+"""(){
 	);
 
 	cy.layout( options );
+	
+	$('#clickMe_"""+str(eva)+"""').click(function () {
+	    var png64 = cy.png({
+	    	
+	    	maxWidth: 4000,
+	    	maxHeight: 3000
+	    });
+	    // put the png data in an img tag
+	    $('#png-e"""+str(eva)+"""').attr('src', png64);
+
+	});		
 
 };""")
 
